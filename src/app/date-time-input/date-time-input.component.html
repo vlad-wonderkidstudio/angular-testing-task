@@ -1,0 +1,15 @@
+<div class="date-time-input-component ">
+    <div class="caption">
+        {{ caption }} 
+        <p *ngIf="isRequired" class="is-required">*</p>
+    </div>
+    <div class="field">
+        <input type="datetime-local"
+            [(ngModel)]="input"
+            (ngModelChange)="onChange($event)"
+            (blur)="onTouch()"
+            [ngClass]="{'error-input': errorMessage != ''}"
+        />
+    </div>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+</div>

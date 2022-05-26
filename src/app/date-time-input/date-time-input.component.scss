@@ -1,0 +1,35 @@
+@import 'variables';
+
+.date-time-input-component {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0px;
+
+    .caption {
+        font-family: sans-serif;
+        font-size: 16px;
+        color: $main-text-color;
+
+        .is-required {
+            display: inline;
+            font-weight: bold;
+            color: #A30000;
+        }
+    }
+
+    .field { }
+
+    .error-message {
+        color: $error-red-color;
+    }
+    .error-input {
+        border: 1px solid $error-red-color;
+    }
+    .error-input:focus {
+        border: 1px solid $error-red-color;
+        outline-color: $error-red-color;
+    }
+    
+
+}

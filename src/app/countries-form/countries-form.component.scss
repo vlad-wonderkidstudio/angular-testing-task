@@ -1,0 +1,104 @@
+@import 'variables';
+
+.countries-form-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #CCCCCC;
+    margin-top: 10px;
+    padding: 10px 0px 10px 0px;
+
+    .question-block {
+        width: 97%;
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: #277AFE;
+        color: white;
+        text-align: center;
+    }
+
+    .date-time-bar {
+        display: flex;
+        flex-direction: row;
+
+        :first-child {
+            padding-right: 15px;
+        }
+    }
+
+    .buttons-bar {
+        text-align: right;
+        button {
+            font-weight: bold;
+            border-color: #1967D2;
+            background-color: #398EE7;
+            color: white;
+            padding: 10px 37px 10px 37px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #499EF7;
+        }
+        button:disabled {
+            cursor: not-allowed;
+            background-color: #196EA7;            
+            color: -internal-light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
+            border-color: -internal-light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3));
+        }
+        .cancel-button {
+            background-color: #B8B8B8;
+            border-color: #B1B1B1;
+        }
+        .cancel-button:hover {
+            background-color: #C8C8C8;
+        }
+    }
+
+    .popup {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        top: 0px;
+        left: 0px;
+        background-color: #C8C8C8AA;
+
+        .popup-container {
+            border: 1px #383838;
+            border-radius: 5px;
+            background-color: white;
+            
+            top: 30%;
+            width: 500px;
+            height: 200px;
+            
+            position: relative;
+            padding: 15px;
+            overflow: auto;
+
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+        .text {
+            text-align: center;
+            height: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .buttons-bar {
+
+        }
+        .cross {
+            font-family: sans-serif;
+            cursor: pointer;
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            font-size: 26px;
+          }
+    }
+}

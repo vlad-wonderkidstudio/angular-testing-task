@@ -1,0 +1,21 @@
+@import 'variables';
+
+.top-bar-component {
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+
+    .title {
+        font-family: sans-serif;
+        font-size: 16px;
+        color: $main-text-color;
+    }
+
+    .additional-data {
+        display: flex;
+        align-items: center;
+    }
+
+}

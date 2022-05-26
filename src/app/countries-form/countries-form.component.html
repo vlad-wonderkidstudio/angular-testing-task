@@ -1,0 +1,83 @@
+<div class="countries-form-component">
+    <div class="question-block">
+        Which countries did you visit during the given period of time?
+    </div>
+    <form
+        [formGroup]="countriesForm"
+        (ngSubmit)="save()"
+    >
+        
+        <div>
+            <div class="date-time-bar">
+                <app-date-time-input
+                    formControlName='dateTimeFrom'
+                    [caption]="'From:'"
+                    [errorMessage]="dateTimeFromErrorMessage"
+                    [isRequired]="true"
+                ></app-date-time-input>
+                <app-date-time-input
+                    formControlName='dateTimeTo'
+                    [caption]="'To:'"
+                    [errorMessage]="dateTimeToErrorMessage"
+                    [isRequired]="true" 
+                ></app-date-time-input>
+            </div>
+            <br/>
+        </div>
+        <app-multi-selection-dropdown
+            [items]="allCountries"
+            formControlName='countries'
+            [caption]="'Countries:'"
+            [errorMessage]="countriesErrorMessage"
+            [isRequired]="true"
+        ></app-multi-selection-dropdown>
+
+        <div class="buttons-bar">
+            <button
+                type="submit"
+                class="save-button"
+                [disabled]="!countriesForm.valid"
+            >Save</button>
+            &nbsp;
+            <button
+                type="button"
+                class="cancel-button"
+                (click)="cancel()"
+            >Cancel</button>
+        </div>
+    </form>
+
+    <!-- Popups arrea [START] -->
+    <div class="popup" *ngIf="showSavedPopup">
+        <div class="popup-container">
+            <div class="cross"
+                (click)="closeSavedPopup()"
+            >X</div>
+            <div class="text">Everything Is saved and went well!</div>
+            <div class="buttons-bar">
+                <button type="button"
+                    (click)="closeSavedPopup()"
+                >Ok</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" *ngIf="showCancelPopup">
+        <div class="popup-container">
+            <div class="cross"
+                (click)="closeCancelPopup()"
+            >X</div>
+            <div class="text">Are you sure you want to leave the form?</div>
+            <div class="buttons-bar">
+                <button type="button"
+                    class="cancel-button"
+                    (click)="leaveTheForm()"
+                >Yes</button>&nbsp;
+                <button type="button"
+                    (click)="closeCancelPopup()"
+                >No</button>
+            </div>
+        </div>
+    </div>
+    <!-- Popups arrea [END] -->
+</div>
